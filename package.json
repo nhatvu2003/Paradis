@@ -1,0 +1,35 @@
+{
+  "name": "paradis",
+  "version": "1.0.0",
+  "description": "Simple discord sever bot by Nhat Vu",
+  "main": "paradis",
+  "scripts": {
+    "test": "node paradis"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhatvu2003/paradis.git"
+  },
+  "keywords": [
+    "simple",
+    "bot",
+    "discord",
+    "messenger",
+    "nhatvu"
+  ],
+  "author": "NVCoder (Nhat Vu)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nhatvu2003/paradis/issues"
+  },
+  "homepage": "https://github.com/nhatvu2003/paradis#readme",
+  "dependencies": {
+    "axios": "^1.7.3",
+    "canvas": "^2.11.2",
+    "chalkercli": "^1.6.4",
+    "discord.js": "^14.15.3",
+    "gradient-string": "^2.0.2",
+    "semver": "^7.6.3"
+  }
+}
