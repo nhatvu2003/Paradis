@@ -34,24 +34,40 @@
 
 import axios from "axios";
 import semver from "semver";
-
+import {resolve as resolvePath} from "path";
+import Helpers from "./src/helpers/index.js";
+import Core from "./src/core/index.js";
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const configLoader = new Helpers.ConfigHelpers({fileName:"config.json",path:resolvePath(process.cwd(),"app","config")})
+const languageLoader = new Helpers.LanguageLoader({lng:configLoader.get("LANGUAGE"),path:resolvePath(process.cwd(),"app","language")})
 class Paradis {
     constructor() {
+        this.updateCheckingURL = "https://raw.githubusercontent.com/nhatvu2003/Paradis/master/package.json"
 
-        this.PRAGLOBAL = {
-
-        }
     }
-    async initialize() {}
+    async initialize() {
+        await this.updateCheck();
+
+    }
 
     async updateCheck() {
         try {
+            const response = await axios.get(this.updateCheckingURL);
+            const latestVersion = response.data.version;
+            const currentVersion = require("./package.json").version;
+            if(semver.lt(currentVersion, latestVersion)) {
 
-        }catch(e) {
-
+            }else {
+                Helpers.LoggerHelpers.custom(languageLoader.loadLng("CURRENT_NEW_VERSION"),"UPDATE")
+            }
+        } catch (e) {
+            Helpers.LoggerHelpers.warn("Không thể kết nối tới máy chủ cập nhật vui lòng kiểm tra lại" + e);
         }
     }
     async info() {
-
+        
     }
 }
+const ParadisInstance = new Paradis;
+ParadisInstance.initialize();
