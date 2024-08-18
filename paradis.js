@@ -34,39 +34,62 @@
 
 import axios from "axios";
 import semver from "semver";
-import {resolve as resolvePath} from "path";
+import {
+    resolve as resolvePath
+} from "path";
 import Helpers from "./src/helpers/index.js";
-import Core from "./src/core/index.js";
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const configLoader = new Helpers.ConfigHelpers({fileName:"config.json",path:resolvePath(process.cwd(),"app","config")})
-const languageLoader = new Helpers.LanguageLoader({lng:configLoader.get("LANGUAGE"),path:resolvePath(process.cwd(),"app","language")})
+import {
+    createRequire
+} from 'module';
+import Core from "./src/ParaClient.js";
+const require = createRequire(
+    import.meta.url);
+const configLoader = new Helpers.ConfigHelpers({
+    fileName: "config.json",
+    path: resolvePath(process.cwd(), "app", "config")
+})
+const languageLoader = new Helpers.LanguageLoader({
+    lng: configLoader.get("LANGUAGE"),
+    path: resolvePath(process.cwd(), "app", "language")
+})
+const ParaClient = new Core({Token:configLoader.get("TOKEN")});
 class Paradis {
     constructor() {
         this.updateCheckingURL = "https://raw.githubusercontent.com/nhatvu2003/Paradis/master/package.json"
 
     }
     async initialize() {
+        /**
+         * Clean console
+         * Làm sạch console
+         */       
+        console.clear();
+
+        /**
+         * Checking update
+         * Kiểm tra cập nhật
+         */
         await this.updateCheck();
-
+        await ParaClient.ParaLoadCommands();
+        await ParaClient.ParaLoadListener();
+        await ParaClient.loginDiscordClient();
     }
-
     async updateCheck() {
         try {
             const response = await axios.get(this.updateCheckingURL);
             const latestVersion = response.data.version;
             const currentVersion = require("./package.json").version;
-            if(semver.lt(currentVersion, latestVersion)) {
+            if (semver.lt(currentVersion, latestVersion)) {
 
-            }else {
-                Helpers.LoggerHelpers.custom(languageLoader.loadLng("CURRENT_NEW_VERSION"),"UPDATE")
+            } else {
+                Helpers.LoggerHelpers.custom(languageLoader.loadLng("PRD_CURRENT_NEW_VERSION"), "UPDATE")
             }
         } catch (e) {
-            Helpers.LoggerHelpers.warn("Không thể kết nối tới máy chủ cập nhật vui lòng kiểm tra lại" + e);
+            Helpers.LoggerHelpers.warn(languageLoader.loadLng("PRD_CONNECTION_SERVER_FAILED"));
         }
     }
-    async info() {
-        
+    async infoParadis() {
+
     }
 }
 const ParadisInstance = new Paradis;

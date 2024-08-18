@@ -2,12 +2,13 @@
     "NAME":"Paradis",
     "PREFIX":"/",
     "TIME_ZONE":"Asia/HoChiMinh",
-    "TOKEN":"YOUR_BOT_TOKEN_HERE",
+    "TOKEN":"your_token_here",
     "LANGUAGE":"vi",
     "DATABASE": {
         "TYPE_DATA":"json",
         "MONGODB": {
 
         }
-    }
+    },
+    "LOG_MESSAGE":true
 }

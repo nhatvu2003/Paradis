@@ -1,1 +1,31 @@
-CURRENT_NEW_VERSION = You are using the latest version of Paradis
+#PARADIS UPDATE
+
+PRD_CURRENT_NEW_VERSION = You are using the latest version of Paradis
+PRD_UPDATE_NEW_VERSION = Paradis has a new version %1, please update
+PRD_CURRENT_VERSION = You are using Paradis version: %1
+
+#PARADIS SERVER
+PRD_CONNECTION_SERVER_FAILED = Connection to the server failed! Please check again
+
+#PARADIS LOGIN
+
+PRD_LOGIN = Login
+PRD_LOGIN_FAILED = Invalid token! Login failed.
+PRD_LOGIN_SUCCESS_USER = Successfully logged in with user: %1
+
+#PARADIS CORE
+
+PRD_COMMAND_LOAD_SUCCESS = Successfully loaded %1 commands
+PRD_EVENT_LOAD_SUCCESS = Successfully loaded %1 events
+PRD_COMMAND_LOAD_FAILED = Command %1 failed to load due to error %2
+PRD_EVENT_LOAD_FAILED = Event %1 failed to load due to error %2
+PRD_LOAD_PREFIX = Current bot prefix is: %1
+PRD_LOAD_NAME = Current bot name is: %1
+PRD_CREATE_LISTEN = Starting initialization of listen
+
+#PRD COMMAND OR EVENT
+PRD_USER_EXECUTE_COMMAND = User %1 just executed the command
+PRD_LOAD_FILE_FAILED = Command %1 has an invalid structure, please check again!
+PRD_COMMAND_NOT_EXISTS = Command does not exist, please use %1help to see the command list
+PRD_ONSTART_NOT_EXISTS = Command file %1 has an invalid structure or missing onStart function! Please check again
+PRD_CONFIG_NOT_EXISTS = Command file %1 has an invalid structure or missing Config! Please check again

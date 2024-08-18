@@ -1,3 +1,4 @@
+
 /**
  * Vietnamese:
  * Dự án:     Paradis - Một bot đơn giản dành cho máy chủ discord
@@ -32,8 +33,13 @@
  * ----------------------------------------------------------------
  */
 
-
-
 export default {
-
+    Config : {
+        name:"help",
+		descriptions:"Show discord bot command list",
+		version:"1.0.0",
+		author:"NVCoder (Nhat Vu)"
+    },
+    onStart: ({message}) => {
+    }
 }

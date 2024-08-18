@@ -4,7 +4,7 @@
   "description": "Simple discord sever bot by Nhat Vu",
   "main": "paradis",
   "scripts": {
-    "test": "node paradis"
+    "test": "nodemon paradis"
   },
   "type": "module",
   "repository": {
@@ -31,6 +31,7 @@
     "discord.js": "^14.15.3",
     "dotenv": "^16.4.5",
     "gradient-string": "^2.0.2",
+    "nodemon": "^3.1.4",
     "semver": "^7.6.3"
   }
 }

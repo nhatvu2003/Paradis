@@ -1,1 +1,35 @@
-CURRENT_NEW_VERSION = Bạn đang sử dụng phiên bản mới nhất của Paradis
+#PARADIS UPDATE
+
+PRD_CURRENT_NEW_VERSION = Bạn đang sử dụng phiên bản mới nhất của Paradis
+PRD_UPDATE_NEW_VERSION = Paradis đã có phiên bản %1 vui lòng cập nhật
+PRD_CURRENT_VERSION = Bạn đang sử dụng Paradis phiên bản: %1
+
+
+#PARADIS SERVER
+
+PRD_CONNECTION_SERVER_FAILED = Kết nối tới máy chủ thất bại! Vui lòng kiểm tra lại
+
+
+#PARADIS LOGIN
+
+PRD_LOGIN= Đăng nhập
+PRD_LOGIN_FAILED = Token không hợp lệ! Đăng nhập thất bại.
+PRD_LOGIN_SUCCESS_USER = Đăng nhập thành công với user: %1
+
+
+#PARADIS CORE
+
+PRD_COMMAND_LOAD_SUCCESS = Tải thành công %1 lệnh
+PRD_EVENT_LOAD_SUCCESS = Tải thành công %1 sự kiện
+PRD_COMMAND_LOAD_FAILED = Lệnh %1 gặp tải thất bại vì gặp lỗi %2
+PRD_EVENT_LOAD_FAILED = Sự kiện %1 gặp tải thất bại vì gặp lỗi %2
+PRD_LOAD_PREFIX = Prefix hiện tại của bot là: %1
+PRD_LOAD_NAME = Tên của bot hiện tại là: %1
+PRD_CREATE_LISTEN = Bắt đầu khởi tạo listen
+
+#PRD COMMAND OR EVENT
+PRD_USER_EXECUTE_COMMAND = Người dùng %1 vừa sử dụng lệnh
+PRD_LOAD_FILE_FAILED = Lệnh %1 cấu trúc không hợp lệ vui lòng kiểm tra lại!
+PRD_COMMAND_NOT_EXISTS = Lệnh không không tồn tại, vui lòng sử dụng lệnh %1help để xem danh sách lệnh
+PRD_ONSTART_NOT_EXISTS = File lệnh %1 sai cấu trúc hoặc thiếu hàm onStart! Vui lòng kiểm tra lại
+PRD_CONFIG_NOT_EXISTS = File lệnh %1 sai cấu trúc hoặc thiếu Config! Vui lòng kiểm tra lại
